@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./resources/images/favicon-32x32.png">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./resources/reset.css">
+    <link rel="stylesheet" href="./resources/style.css">
+    <title>CreditCard</title>
+</head>
+<body>
+    <div class="card">
+        <div class="card-back">
+            <p class="security-code-on-card">000</p>
+        </div>
+        <div class="card-front">
+            <img src="./resources/images/card-logo.svg" alt="card-logo" class="card-logo">
+            <p class="number-on-card">0000 0000 0000 0000</p>
+            <div class="info-on-card">
+                <p class="name-on-card">JANE APPLESEED</p>
+                <p class="exp-date-on-card">00/00</p>
+            </div>
+        </div>
+    </div>
+    <div class="first-page">
+        
+        <div class="input-cont">
+            <div class="input-div ">
+                <label for="cardholder"> Cardholder Name</label>
+                <input type="text" class="cardholder" placeholder="e.g. Jane Appleseed" inputmode="verbatim" maxlength="25" oninput="checkName()">
+                <p class="error error-name">Can't be blank</p>
+            </div>
+            <div class="input-div">
+                <label for="cardnumber"> Card Number</label>
+                <input class="cardnumber" type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" inputmode="numeric"  maxlength="19" placeholder="e.g. 1234 5678 9123 0000" oninput="checkNumber()">  
+                <p class="error error-number">Wrong format, numbers only</p>      
+            </div>
+            <div class="input-div-bottom">
+                <div class="exp-date">
+                        <label for="month/year">Exp. Date (MM/YY)</label>
+                        <div class="exp-input">
+                            <input type="tel" class="month" placeholder="MM" inputmode="numeric" maxlength="2">
+                            <input type="tel" class="year" placeholder="YY" inputmode="numeric" maxlength="2">
+                        </div>
+                        <p class="error error-exp">Can't be blank</p>
+                </div>
+                <div class="cvc-cont">
+                    <label for="cvc">Exp. Date (MM/YY)</label>
+                    <input type="tel" class="cvc" maxlength="3" min="3" inputmode="numeric" placeholder="e.g. 123" oninput="checkCvc()">
+                    <p class="error error-cvc">Can't be blank</p>
+                </div>
+            </div>
+            <input type="submit" value="Confirm" class="submit" onclick="check()">
+
+        </div>
+    </div>
+    <div class="second-page">
+        <img src="./resources/images/icon-complete.svg" alt="icon" class="icon-complete">
+        <p class="thank-you">Thank You!</p>
+        <p class="card-details">We've added your card details</p>
+        <input type="submit" value="Confirm" class="submit">
+    </div>
+
+    <script src="./resources/script.js"></script>
+</body>
+</html>
